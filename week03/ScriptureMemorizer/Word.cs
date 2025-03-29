@@ -18,13 +18,13 @@ public class Word
 
     public void Show()
     {
-        Console.WriteLine($"Scripture Reference: {Reference ref}");
+        Console.WriteLine($"Scripture Reference: {Reference}");
         Console.WriteLine("Scripture Text:");
     }
 
     public bool IsHidden()
          {
-        foreach (Word word in Words)
+        foreach (Word word in word)
         {
             if (!word._isHidden)
                 return false;
@@ -36,3 +36,4 @@ public class Word
         string text = $"{_text}";
         return text;
     }
+}
