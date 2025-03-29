@@ -8,6 +8,7 @@ using System.Transactions;
 public class Scripture
 {
     private string  _reference;
+    private string _text;
     
     private List<string>_words = new List<string>();
     private string IsHidden;
@@ -15,8 +16,9 @@ public class Scripture
 
     public Scripture(Reference reference, string text)
     {
-        _reference = Reference;
-        text = Text;
+        _reference = reference;
+        _text = text;
+        IsHidden = "";
     }
 
     public void HideRandomWords(int numbersToHide)
@@ -30,12 +32,12 @@ public class Scripture
         }
         while (_words[index].IsHidden); // Ensure the word is not already hidden
 
-        _words[index].Hide(); // Hide the selected word
+        _words[index].IsHide(); // Hide the selected word
     }
 
     public string GetDisplayText()
     {
-        return IsHidden ? new string('_', Text.Length) : Text;
+        return IsHidden ? new string('_', _text.Length) : _text;
     }
 
 }                                          
