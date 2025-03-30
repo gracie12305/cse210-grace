@@ -2,8 +2,10 @@ using System;
 
 public class Word
 {
+    private string ScriptureReference;
     private string _text;
     private bool _isHidden;
+    List<Word> words = new List<Word>();
 
     public Word(string text)
     {
@@ -18,13 +20,14 @@ public class Word
 
     public void Show()
     {
-        Console.WriteLine($"Scripture Reference: {Reference}");
+        Console.WriteLine($"Scripture Reference: {ScriptureReference}");
         Console.WriteLine("Scripture Text:");
     }
 
     public bool IsHidden()
          {
-        foreach (Word word in word)
+            
+        foreach (Word word in words)
         {
             if (!word._isHidden)
                 return false;
